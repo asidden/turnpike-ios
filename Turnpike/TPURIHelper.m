@@ -33,7 +33,7 @@
     NSString *resourcePath = nil;
     
     // Strip out Query String
-    for (int i = inputString.length-1; i >= 0; i--) {
+    for (NSInteger i = inputString.length-1; i >= 0; i--) {
         if ([inputString characterAtIndex:i] == '?') {
             resourcePath = [inputString substringToIndex:i];
             queryString = [accumulatedQueryString copy];
@@ -50,7 +50,7 @@
     }
     
     // Strip out the url scheme from the resource path
-    for (int i = 0; i < inputString.length; i++) {
+    for (NSInteger i = 0; i < inputString.length; i++) {
         // If we hit a slash before we hit a colon, there is no schema and this is invoked internally
         if ([inputString characterAtIndex:i] == '/') {
             schema = nil;
